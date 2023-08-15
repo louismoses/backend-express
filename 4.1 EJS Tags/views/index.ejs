@@ -3,35 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- title %></title>
+    <title><%= title%></title>
 </head>
 <body>
-    <h1><%= title %></h1>
-    <p>Current second : <%= seconds %></p>
+        <h1> <%= title %> </h1>
+        <p>current seconds is <%= seconds %> </p>
+        <!-- display array list here -->
+        <% if(seconds % 2 ===0){ %>
+            <ul>
+               <% items.forEach((fruit)=>{   %> 
+                <li><%= fruit %></li>
+                <%   }) %>
+            </ul>
 
-    
-
-    <!-- display array list here -->
-
-    <% if(seconds % 2 === 0) { %>
-        <ul>
-
-            <% items.forEach((fruits) => { %>
-                <li><%=fruits%></li> 
-            <%  }); %>
-
-        </ul>
-    <% } else { %>
-
-        <p>No items to display</p>
-
-        <% } %>
-    
-
-  
-
-    <!-- display array list here -->
-    <%- htmlContent %>
-    <%- include('footer.ejs')%>
+            <% } else { %>
+                <p>no items to display</p>
+                <% } %>
+        <!-- display array list here -->
+        <%-  htmlContent %>
+        <%- include('footer.ejs') %>
 </body>
 </html>

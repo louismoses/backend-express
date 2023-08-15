@@ -7,8 +7,8 @@ app.get("/", (req, res) => {
   const data = {
     title: "EJS Tags",
     seconds: new Date().getSeconds(),
-    items: ["apples", "banana", "cherry"],
-    htmlContent: "<em> This is some em text </em>",
+    items: ["apple", "mango", "banana"],
+    htmlContent: "<em> this is some em text </em>",
   };
   res.render("index.ejs", data);
 });
